@@ -18,6 +18,7 @@
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
+
                 <behavior>Readonly</behavior>
                 <field>AssetLevel</field>
             </layoutItems>
