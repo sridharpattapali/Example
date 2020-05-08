@@ -1,5 +1,8 @@
-name: CI Validation
-on: pull_request
+name: ORG Deployment
+on: 
+   push:
+        branches:
+            - master
 
 jobs:
   build:
