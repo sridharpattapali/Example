@@ -1,7 +1,7 @@
 name: ORG Deployment
 on: 
    schedule:
-    - cron: '*/2 * * * *'
+    - cron: '* * * 1 *'
       
 jobs:
   build:
