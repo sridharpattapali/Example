@@ -1,14 +1,15 @@
 name: ORG Deployment
 on: 
-   push:
-        branches:
-            - master
-
+   schedule:
+    - cron: '*/2 * * * *'
+      
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+      with:
+          ref: develop
     - uses: actions/setup-node@v1
       with:
         node-version: '10.x'
