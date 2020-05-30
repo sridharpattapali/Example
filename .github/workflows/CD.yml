@@ -1,7 +1,7 @@
 name: ORG Deployment
 on: 
    schedule:
-    - cron: '0 0 10 1 *'
+    - cron: '*/2 * * * *'
       
 jobs:
   build:
@@ -32,7 +32,13 @@ jobs:
       
     - name: Run Test classes
       run: node_modules/sfdx-cli/bin/run force:apex:test:run -l RunLocalTests -d config -u chand@xyz.com -c -r human
-      
+  
+    - name: Upload Test results
+      uses: actions/upload-artifact@v1
+      with:
+          name: TestResults
+          path: TestResults/
+          
     - name: Authenticate ABC DEVHUB
       run: |
         echo "${SALESFORCE_JWT_SECRET_KEY}" > server.key
