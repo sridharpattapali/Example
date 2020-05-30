@@ -37,7 +37,7 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
           name: TestResults
-          
+          path: TestResults/
           
     - name: Authenticate ABC DEVHUB
       run: |
