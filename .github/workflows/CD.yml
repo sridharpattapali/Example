@@ -1,7 +1,7 @@
 name: ORG Deployment
 on: 
    schedule:
-    - cron: '*/2 * * * *'
+    - cron: '*/5 * * * *'
       
 jobs:
   build:
@@ -36,8 +36,8 @@ jobs:
     - name: Upload Test results
       uses: actions/upload-artifact@v1
       with:
-          name: TestResults
-          path: TestResults/
+          name: config
+          path: config/
           
     - name: Authenticate ABC DEVHUB
       run: |
