@@ -36,8 +36,8 @@ jobs:
     - name: Upload Test results
       uses: actions/upload-artifact@v1
       with:
-          name: config
-          path: config/
+          name: TestResults
+          path: TestResults/*.json
           
     - name: Authenticate ABC DEVHUB
       run: |
