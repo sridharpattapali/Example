@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="force.apex" timestamp="2020-05-30T12:20:53+05:30" hostname="https://chandxyz-dev-ed.my.salesforce.com" tests="35" failures="0"  errors="0"  time="2.23">
+        <properties>
+            <property name="outcome" value="Passed"/>
+            <property name="testsRan" value="35"/>
+            <property name="passing" value="35"/>
+            <property name="failing" value="0"/>
+            <property name="skipped" value="0"/>
+            <property name="passRate" value="100%"/>
+            <property name="failRate" value="0%"/>
+            <property name="testStartTime" value="May 30, 2020 12:20 PM"/>
+            <property name="testExecutionTime" value="2.23 s"/>
+            <property name="testTotalTime" value="2.23 s"/>
+            <property name="commandTime" value="91.73 s"/>
+            <property name="hostname" value="https://chandxyz-dev-ed.my.salesforce.com"/>
+            <property name="orgId" value="00D90000000z5EHEAY"/>
+            <property name="username" value="chand@xyz.com"/>
+            <property name="testRunId" value="7070o0000E3WW6F"/>
+            <property name="userId" value="005900000035GHpAAM"/>
+            <property name="testRunCoverage" value="79%"/>
+            <property name="orgWideCoverage" value="26%"/>
+        </properties>
+        <testcase name="testChangePasswordController" classname="ChangePasswordControllerTest" time="0.01">
+        </testcase>
+        <testcase name="insertNewAccount" classname="CollapsibleSectionUsingLWCTest" time="0.54">
+        </testcase>
+        <testcase name="testCommunitiesLandingController" classname="CommunitiesLandingControllerTest" time="0.02">
+        </testcase>
+        <testcase name="testCommunitiesLoginController" classname="CommunitiesLoginControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testCommunitiesSelfRegConfirmController" classname="CommunitiesSelfRegConfirmControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testCommunitiesSelfRegController" classname="CommunitiesSelfRegControllerTest" time="0.1">
+        </testcase>
+        <testcase name="validateCustomOwnershipController" classname="CustomOwnershipController_Test" time="0.2">
+        </testcase>
+        <testcase name="insertNewAccount" classname="DLWC_CollapsibleSectionTest" time="0.1">
+        </testcase>
+        <testcase name="testForgotPasswordController" classname="ForgotPasswordControllerTest" time="0.01">
+        </testcase>
+        <testcase name="LightningForgotPasswordControllerInstantiation" classname="LightningForgotPasswordControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testLightningForgotPasswordControllerInvalidUserName" classname="LightningForgotPasswordControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testLightningForgotPasswordControllerWithNullCheckEmailRef" classname="LightningForgotPasswordControllerTest" time="0.01">
+        </testcase>
+        <testcase name="LightningLoginFormControllerInstantiation" classname="LightningLoginFormControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testAuthConfig" classname="LightningLoginFormControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testGetSelfRegistrationURL" classname="LightningLoginFormControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testIsSelfRegistrationEnabled" classname="LightningLoginFormControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testIsUsernamePasswordEnabled" classname="LightningLoginFormControllerTest" time="0.02">
+        </testcase>
+        <testcase name="testLoginWithInvalidCredentials" classname="LightningLoginFormControllerTest" time="0.01">
+        </testcase>
+        <testcase name="LightningSelfRegisterControllerInstantiation" classname="LightningSelfRegisterControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testGetExtraFieldsInSelfRegistration" classname="LightningSelfRegisterControllerTest" time="0.09">
+        </testcase>
+        <testcase name="testGetNonEmptyExtraFields" classname="LightningSelfRegisterControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testGetNullExtraFields" classname="LightningSelfRegisterControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testIsValidPassword" classname="LightningSelfRegisterControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testSelfRegisterWithCreatedAccount" classname="LightningSelfRegisterControllerTest" time="0.08">
+        </testcase>
+        <testcase name="testSelfRegisterWithProperCredentials" classname="LightningSelfRegisterControllerTest" time="0.04">
+        </testcase>
+        <testcase name="testSelfRegistration" classname="LightningSelfRegisterControllerTest" time="0.08">
+        </testcase>
+        <testcase name="testSiteAsContainerEnabled" classname="LightningSelfRegisterControllerTest" time="0.02">
+        </testcase>
+        <testcase name="testSave" classname="MyProfilePageControllerTest" time="0.25">
+        </testcase>
+        <testcase name="testSiteLoginController" classname="SiteLoginControllerTest" time="0.01">
+        </testcase>
+        <testcase name="testRegistration" classname="SiteRegisterControllerTest" time="0.02">
+        </testcase>
+        <testcase name="getAccountList" classname="TestAccountController" time="0.15">
+        </testcase>
+        <testcase name="getSingleAccount" classname="TestAccountController" time="0.05">
+        </testcase>
+        <testcase name="findContacts" classname="TestContactController" time="0.14">
+        </testcase>
+        <testcase name="getContactList" classname="TestContactController" time="0.11">
+        </testcase>
+        <testcase name="getSingleContact" classname="TestContactController" time="0.05">
+        </testcase>
+    </testsuite>
+</testsuites>
