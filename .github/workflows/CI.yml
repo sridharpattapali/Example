@@ -27,5 +27,5 @@ jobs:
       run: node_modules/sfdx-cli/bin/run force:source:deploy -p force-app/main/default -u chand@xyz.com -c
       
     - name: Run Test classes
-      run: node_modules/sfdx-cli/bin/run force:apex:test:run -l RunLocalTests -d config -u chand@xyz.com 
+      run: node_modules/sfdx-cli/bin/run force:apex:test:run -l RunLocalTests -d con -u chand@xyz.com -c -r human
 
