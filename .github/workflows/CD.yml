@@ -31,7 +31,7 @@ jobs:
       run: node_modules/sfdx-cli/bin/run force:source:deploy -p force-app/main/default -u chand@xyz.com 
       
     - name: Run Test classes
-      run: node_modules/sfdx-cli/bin/run force:apex:test:run -l RunLocalTests -u chand@xyz.com -c -r human
+      run: node_modules/sfdx-cli/bin/run force:apex:test:run -l RunLocalTests -d scripts -u chand@xyz.com -c -r human
   
     - name: Upload Test results
       uses: actions/upload-artifact@v1
