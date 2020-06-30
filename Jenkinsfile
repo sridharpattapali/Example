@@ -27,10 +27,10 @@ node {
         stage('Validate code in CI') {
             if (isUnix()) {
 			println 'unix'
-                rc = sh returnStatus: true, script: "${toolbelt} sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --instanceurl ${SFDC_HOST}"
+                rc = sh returnStatus: true, script: "${toolbelt} force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --instanceurl ${SFDC_HOST}"
             }else{
 			println 'non unix'
-                 rc = bat returnStatus: true, script: "${toolbelt} sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile \"${jwt_key_file}\" --instanceurl ${SFDC_HOST}"
+                 rc = bat returnStatus: true, script: "${toolbelt} force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile \"${jwt_key_file}\" --instanceurl ${SFDC_HOST}"
             }
             if (rc != 0) { error 'hub org authorization failed' }
 
@@ -39,9 +39,9 @@ node {
 			
 			// need to pull out assigned username
 			if (isUnix()) {
-				rmsg = sh returnStdout: true, script: "${toolbelt} sfdx force:source:deploy -p force-app/main/default -u ${HUB_ORG} -c"
+				rmsg = sh returnStdout: true, script: "${toolbelt} force:source:deploy -p force-app/main/default -u ${HUB_ORG} -c"
 			}else{
-			   rmsg = bat returnStdout: true, script: "\"${toolbelt}\" sfdx force:source:deploy -p force-app/main/default -u ${HUB_ORG} -c"
+			   rmsg = bat returnStdout: true, script: "\"${toolbelt}\" force:source:deploy -p force-app/main/default -u ${HUB_ORG} -c"
 			}
 			  
             printf rmsg
