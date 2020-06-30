@@ -25,12 +25,28 @@ node {
 
     withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
         stage('Validate code in CI') {
-            rc = command "${toolbelt}/sfdx force:auth:jwt:grant --clientid 3MVG97quAmFZJfVylQ42coJwBXR.ari2CiMqbtW02dWJcHpF75o3yST8bTOvDtzWMmDMmycdHx7VWibJh.hxm --username chand@ci.com --jwtkeyfile ${jwt_key_file} --instanceurl https://login.salesforce.com"
-            if (rc != 0) {
+            if (isUnix()) {
+			println 'unix'
+                rc = sh returnStatus: true, script: "${toolbelt} sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --instanceurl ${SFDC_HOST}"
+            }else{
+			println 'non unix'
+                 rc = bat returnStatus: true, script: "\"${toolbelt}\" sfdx force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile \"${jwt_key_file}\" --instanceurl ${SFDC_HOST}"
+            }
+            if (rc != 0) { error 'hub org authorization failed' }
+
 			println 'rc is:'
 			println rc
-             error 'Salesforce dev hub org authorization failed.'
-            }
+			
+			// need to pull out assigned username
+			if (isUnix()) {
+				rmsg = sh returnStdout: true, script: "${toolbelt} sfdx force:source:deploy -p force-app/main/default -u ${HUB_ORG} -c"
+			}else{
+			   rmsg = bat returnStdout: true, script: "\"${toolbelt}\" sfdx force:source:deploy -p force-app/main/default -u ${HUB_ORG} -c"
+			}
+			  
+            printf rmsg
+            println('Hello from a Job DSL script!')
+            println(rmsg)
         }
     }
 }
