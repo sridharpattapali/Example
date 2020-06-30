@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-added testfile2 error
-=======
-added testfile2 mergetool
->>>>>>> 26e0fed05df24f0c3878badb82140f3fd1b82ec9
