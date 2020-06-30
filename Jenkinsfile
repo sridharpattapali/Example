@@ -25,7 +25,7 @@ node {
 
     withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
         stage('Validate code in CI') {
-            rc = command "${toolbelt}/sfdx force:auth:jwt:grant --clientid 3MVG97quAmFZJfVylQ42coJwBXR.ari2CiMqbtW02dWJcHpF75o3yST8bTOvDtzWMmDMmycdHx7VWibJh.hxm --username chand@ci.com --jwtkeyfile C:\Users\chansk\Documents\MySalesforceProjects\GP\openssl\server.key --instanceurl https://login.salesforce.com"
+            rc = command "${toolbelt}/sfdx force:auth:jwt:grant --clientid 3MVG97quAmFZJfVylQ42coJwBXR.ari2CiMqbtW02dWJcHpF75o3yST8bTOvDtzWMmDMmycdHx7VWibJh.hxm --username chand@ci.com --jwtkeyfile ${jwt_key_file} --instanceurl https://login.salesforce.com"
             if (rc != 0) {
 			println 'rc is:'
 			println rc
