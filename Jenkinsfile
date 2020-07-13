@@ -39,7 +39,7 @@ node
     stage('Authenticate CI and Validate')
          {   
 	
-        withCredentials([file(credentialsId: 'SALESFORCE_PRIVATE_KEY', variable: 'JWT_Secret_CRT'), string(credentialsId: 'CONNECTED_APP_CONSUMER_KEY_DH', variable: 'cKey'), string(credentialsId: 'CI_USERNAME', variable: 'uName'),string(credentialsId: 'SFDC_HOST_DH_LOGIN', variable: 'hName')])
+        withCredentials([file(credentialsId: 'JWT_CRED_ID_DH', variable: 'JWT_Secret_CRT'), string(credentialsId: 'AUTO_SFDX_CONNECTED_APP_CONSUMER_KEY_DH', variable: 'cKey'), string(credentialsId: 'AUTO_SFDX_USERNAME', variable: 'uName'),string(credentialsId: 'SANDBOX_SFDC_HOST_DH', variable: 'hName')])
                 {
                     echo "Client id ${cKey}"
 					echo "UserName is ${uName}"
