@@ -6,6 +6,6 @@
     }
   ],
   "namespace": "",
-  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sfdcLoginUrl": "https://scedison--auto.my.salesforce.com",
   "sourceApiVersion": "48.0"
 }
