@@ -45,7 +45,8 @@ node
 					echo "UserName is ${uName}"
 					echo "Instance Url is ${hName}"
 					rc = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:jwt:grant --clientid ${cKey} --username ${uName} --jwtkeyfile \"${JWT_Secret_CRT}\" --instanceurl ${hName}"
-                         if (rc != 0) 
+			echo "rc is ${rc}"
+			if (rc != 0) 
 						{ 
                           error 'org authorization failed' 
                         }
