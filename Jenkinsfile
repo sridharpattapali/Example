@@ -44,14 +44,13 @@ node
                     echo "Client id ${cKey}"
 					echo "UserName is ${uName}"
 					echo "Instance Url is ${hName}"
-			rc1 = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:logout --targetusername ${uName} -p"
 					rc = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:jwt:grant --clientid ${cKey} --username ${uName} --jwtkeyfile \"${JWT_Secret_CRT}\" --instanceurl ${hName}"
                          if (rc != 0) 
 						{ 
                           error 'org authorization failed' 
                         }
 				    rc = bat returnStdout: true, script: "\"${toolbelt}\" force:source:deploy -p force-app/main/default -u ${uName} -c"
-			                  
+			            rc1 = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:logout --targetusername ${uName} -p"      
 				}
     }
 }
